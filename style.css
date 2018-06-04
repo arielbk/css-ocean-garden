@@ -15,8 +15,11 @@
 */
 
 :root {
-	--kina: #00898c;
+	--sea: 	#068;
+	--dark: #026;
+	--electric: #0061ff;
 	--shadow: 0 1px 10px rgba(0,0,0,.8);
+	--rounded:
 }
 
 * {
@@ -28,11 +31,13 @@ html {
 }
 body {
 	color: #111;
+	background: #111;
 	margin: 0;
-	padding: 22px;
+	background: url('images/ocean1.jpeg');
+	background-attachment: fixed;
+	background-size: cover;
 	overflow-x: hidden;
-	font: 22px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background: url('images/ocean1.jpeg') no-repeat fixed;
+	font: 16px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 0;
 }
 @media (max-width: 900px) {
@@ -41,40 +46,67 @@ body {
 	}
 }
 
-/* Top section  */
-h1 {
-	font-size: 3em;
+a {
+	color: var(--electric);
+	text-decoration: none;
 }
+
+a:hover,
+a:focus {
+	color: var(--sea);
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 4em;
+	margin-top: 0;
+	color: var(--dark);
+}
+h2, h3, h4, h5, h6 {
+	color: var(--sea);
+}
+
+/* Top section  */
 
 .page-wrapper {
 	display: grid;
 	grid-gap: 22px;
+	padding: 44px;
+	max-width: 1150px;
+	margin: 0 auto;
 }
 
 .intro {
 	display: grid;
 	grid-gap: 22px;
+	grid-template-columns: repeat(4, 1fr);
 	grid-template-areas:
-		'null title title title'
-		'summary preamble preamble preamble';
+		'title title title summary'
+		'preamble preamble preamble preamble';
 }
 
 header {
 	grid-area: title;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
+	border-radius: 10px 0 0 0;
 }
 
 .summary {
 	grid-area: summary;
-	background: #fff;
-	padding: 0 22px;
+	width: 1fr;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
+	border-radius: 0 10px 0 0;
 }
 
 .preamble {
 	grid-area: preamble;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 
@@ -91,33 +123,46 @@ header {
 
 .explanation {
 	grid-area: explanation;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 .participation {
 	grid-area: participation;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 .benefits {
 	grid-area: benefits;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 .requirements {
 	grid-area: requirements;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 .main footer {
 	grid-area: middle-foot;
 	text-align: center;
-	background: #fff;
-	padding: 22px 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: row;
+}
+
+.main footer a {
+	display: inline-block;
+	padding: 12px;
+	flex-grow: 1;
 }
 
 
@@ -128,14 +173,15 @@ aside.sidebar .wrapper {
 	grid-gap: 22px;
 	grid-template-areas:
 		'selections selections'
-		'archives resources'
+		'resources archives'
 }
 
 .design-selection {
 	grid-area: selections;
 	text-align: center;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
 }
 
 .design-selection li {
@@ -144,12 +190,16 @@ aside.sidebar .wrapper {
 
 .design-archives {
 	grid-area: archives;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
+	border-radius: 0 0 10px 0;
 }
 
 .zen-resources {
 	grid-area: resources;
-	background: #fff;
-	padding: 0 22px;
+	background: rgba(255,255,255,1);
+	padding: 44px;
+	box-shadow: var(--shadow);
+	border-radius: 0 0 0 10px;
 }
