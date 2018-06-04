@@ -14,57 +14,142 @@
 	#00898c
 */
 
+:root {
+	--kina: #00898c;
+	--shadow: 0 1px 10px rgba(0,0,0,.8);
+}
+
+* {
+	box-sizing: border-box;
+}
 html {
 	margin: 0;
 	padding: 0;
 }
 body {
 	color: #111;
-	background: ;
 	margin: 0;
-	padding: 0;
+	padding: 22px;
 	overflow-x: hidden;
-	font: 16px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 22px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: url('images/ocean1.jpeg') no-repeat fixed;
+	margin: 0;
+}
+@media (max-width: 900px) {
+	body {
+		font-size: 12px;
+	}
+}
+
+/* Top section  */
+h1 {
+	font-size: 3em;
+}
+
+.page-wrapper {
+	display: grid;
+	grid-gap: 22px;
 }
 
 .intro {
-	background: url('images/ocean1blur.jpg') no-repeat fixed;
-	background-size: 100vw 100vh;
-	background-position: 0% 100%;
-	margin: 0;
-	height: 100vh;
-	color: #fff;
+	display: grid;
+	grid-gap: 22px;
+	grid-template-areas:
+		'null title title title'
+		'summary preamble preamble preamble';
 }
 
 header {
-	background: url('images/ocean1.jpeg') no-repeat fixed;
-	background-size: 200vw 200vh;
-	background-position: 0% 35%;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(0,0,0,0.9);
-	transform: scale(0.5);
-	filter: grayscale(70%);
-	transition: 1s;
-	overflow: hidden;
+	grid-area: title;
+	background: #fff;
+	padding: 0 22px;
 }
 
-header h1 {
-	font-size: 8em;
-	padding: 44px 88px;
-	margin: 0;
-	line-height: 1.2;
+.summary {
+	grid-area: summary;
+	background: #fff;
+	padding: 0 22px;
 }
 
-header h2 {
-	font-weight: 400;
-	font-size: 4em;
-	padding: 44px 88px;
-	margin: 0;
+.preamble {
+	grid-area: preamble;
+	background: #fff;
+	padding: 0 22px;
 }
 
-.intro .summary,
-.intro .preamble {
-	color: #000;
-	margin-bottom: 1000px;
+
+/* Middle section */
+.main {
+	display: grid;
+	grid-gap: 22px;
+	grid-template-areas:
+		'explanation explanation'
+		'participation requirements'
+		'benefits requirements'
+		'middle-foot middle-foot'
+}
+
+.explanation {
+	grid-area: explanation;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.participation {
+	grid-area: participation;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.benefits {
+	grid-area: benefits;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.requirements {
+	grid-area: requirements;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.main footer {
+	grid-area: middle-foot;
+	text-align: center;
+	background: #fff;
+	padding: 22px 22px;
+}
+
+
+/* Footer */
+
+aside.sidebar .wrapper {
+	display: grid;
+	grid-gap: 22px;
+	grid-template-areas:
+		'selections selections'
+		'archives resources'
+}
+
+.design-selection {
+	grid-area: selections;
+	text-align: center;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.design-selection li {
+	list-style: none;
+}
+
+.design-archives {
+	grid-area: archives;
+	background: #fff;
+	padding: 0 22px;
+}
+
+.zen-resources {
+	grid-area: resources;
+	background: #fff;
+	padding: 0 22px;
 }
