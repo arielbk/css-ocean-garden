@@ -13,13 +13,16 @@
 /*
 	#00898c
 */
+@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700');
 
 :root {
-	--sea: 	#068;
-	--dark: #026;
+	/* --sea: 	#068; */
+	--sea: #375a66;
+	/* --dark: #026; */
+	--dark: #091d3d;
 	--electric: #0061ff;
-	--shadow: 0 1px 10px rgba(0,0,0,.8);
-	--rounded:
+	--shadow: 0 5px 10px rgba(0,0,0,.2), 0 -5px 10px rgba(0,0,0,.2);
 }
 
 * {
@@ -47,23 +50,41 @@ body {
 }
 
 a {
-	color: var(--electric);
+	color: #333;
+	border-bottom: 2px dotted var(--electric);
 	text-decoration: none;
 }
 
 a:hover,
 a:focus {
 	color: var(--sea);
-	text-decoration: underline;
 }
 
 h1 {
 	font-size: 4em;
-	margin-top: 0;
+	margin: 0;
 	color: var(--dark);
+	text-transform: uppercase;
+	font-family: 'Bitter', serif;
+	font-weight: 800;
+}
+h1::before {
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f13d ";
 }
 h2, h3, h4, h5, h6 {
 	color: var(--sea);
+	font-family: 'Bitter', serif;
+	font-weight: 600;
+	margin: 0
+}
+h2 {
+	color: #555;
+	font-size: 2.5em;
+	font-weight: 400;
+}
+h3 {
+	font-size: 1.7em;
+	margin: 0 0 44px 0;
 }
 
 /* Top section  */
@@ -91,20 +112,48 @@ header {
 	padding: 44px;
 	box-shadow: var(--shadow);
 	border-radius: 10px 0 0 0;
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 .summary {
 	grid-area: summary;
+	color: #ccf;
 	width: 1fr;
-	background: rgba(255,255,255,1);
-	padding: 44px;
+	padding: 44px 44px 44px 22px;
 	box-shadow: var(--shadow);
 	border-radius: 0 10px 0 0;
+	/* background: linear-gradient(rgba(0, 34, 102, .9), rgba(0, 34, 102, 0.9)), url(images/test3.jpg); */
+	background: var(--dark);
+	background-position: right;
+	background-size: cover;
+	background-attachment: fixed;
 }
+
+.summary p:first-child {
+	font-weight: 200;
+	margin-bottom: 44px;
+	line-height: 1.8;
+}
+
+.summary p:first-child::before {
+	content: '▶ ';
+}
+
+.summary a {
+	color: #fff;
+}
+
+/* .summary p {
+	font-size: 0.8em;
+} */
 
 .preamble {
 	grid-area: preamble;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
@@ -123,28 +172,36 @@ header {
 
 .explanation {
 	grid-area: explanation;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
 
 .participation {
 	grid-area: participation;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
 
 .benefits {
 	grid-area: benefits;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
 
 .requirements {
 	grid-area: requirements;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
@@ -152,7 +209,11 @@ header {
 .main footer {
 	grid-area: middle-foot;
 	text-align: center;
-	background: rgba(255,255,255,1);
+	/* background: linear-gradient(rgba(0, 34, 102, .9), rgba(0, 34, 102, 0.9)), url(images/test3.jpg);
+	background-position: right;
+	background-size: cover;
+	background-attachment: fixed; */
+	background: var(--dark);
 	padding: 44px;
 	box-shadow: var(--shadow);
 	display: flex;
@@ -163,6 +224,12 @@ header {
 	display: inline-block;
 	padding: 12px;
 	flex-grow: 1;
+	border-radius: 100%;
+	color: #fff;
+	/* background: url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	border-radius: 100%; */
 }
 
 
@@ -179,7 +246,9 @@ aside.sidebar .wrapper {
 .design-selection {
 	grid-area: selections;
 	text-align: center;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 }
@@ -190,7 +259,9 @@ aside.sidebar .wrapper {
 
 .design-archives {
 	grid-area: archives;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 	border-radius: 0 0 10px 0;
@@ -198,7 +269,9 @@ aside.sidebar .wrapper {
 
 .zen-resources {
 	grid-area: resources;
-	background: rgba(255,255,255,1);
+	background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url(images/test3.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	padding: 44px;
 	box-shadow: var(--shadow);
 	border-radius: 0 0 0 10px;
