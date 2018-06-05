@@ -43,11 +43,6 @@ body {
 	font: 16px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 0;
 }
-@media (max-width: 900px) {
-	body {
-		font-size: 12px;
-	}
-}
 
 a {
 	color: #333;
@@ -69,7 +64,10 @@ h1 {
 	font-weight: 800;
 }
 h1::before {
-	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f13d ";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f13d";
+	margin-right: 12px;
 }
 h2, h3, h4, h5, h6 {
 	color: var(--sea);
@@ -108,6 +106,8 @@ h3 {
 
 header {
 	grid-area: title;
+	align-self: center;
+	height: 100%;
 	background: rgba(255,255,255,1);
 	padding: 44px;
 	box-shadow: var(--shadow);
@@ -232,6 +232,10 @@ header {
 	border-radius: 100%; */
 }
 
+.main footer a:hover {
+	color: var(--sea);
+}
+
 
 /* Footer */
 
@@ -253,6 +257,10 @@ aside.sidebar .wrapper {
 	box-shadow: var(--shadow);
 }
 
+.design-selection ul {
+	margin: 0;
+	padding: 0;
+}
 .design-selection li {
 	list-style: none;
 }
@@ -275,4 +283,40 @@ aside.sidebar .wrapper {
 	padding: 44px;
 	box-shadow: var(--shadow);
 	border-radius: 0 0 0 10px;
+}
+
+@media (max-width: 900px) {
+	body {
+		font-size: 12px;
+	}
+	.intro {
+		grid-template-areas:
+			'title title title title'
+			'summary summary summary summary'
+			'preamble preamble preamble preamble';
+	}
+	.intro header {
+		border-radius: 5px 5px 0 0;
+	}
+	.summary {
+		border-radius: 0;
+	}
+
+	.main {
+		grid-template-areas:
+			'explanation explanation'
+			'participation participation'
+			'benefits benefits'
+			'requirements requirements'
+			'middle-foot middle-foot'
+	}
+}
+
+@media (max-width: 520px) {
+	body {
+		text-align: center;
+	}
+	.page-wrapper {
+		padding: 12px;
+	}
 }
